@@ -1,0 +1,13 @@
+def appVersion = "0.1.0-alpha" // scope limited to current build file
+
+// extending 'project' object with custom properties;
+// property available outside of current build file:
+project.ext.projVersion = "1.2.3-beta"
+// automatically resolved to project.ext.*:
+ext.otherVersion = "2.3.5"
+task Task1 {
+    doLast {println "Task1: current application version is $appVersion"} // "string interpolation"
+    doLast {println "project version is $project.ext.projVersion"}
+    doLast {println "same project version (resolved automatically to project.ext.*): $projVersion"}
+    doLast {println "other way to access project.ext.* : $otherVersion"}
+}
