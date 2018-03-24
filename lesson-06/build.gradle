@@ -1,0 +1,26 @@
+project.task("Task1") // one way to create a task
+task("Task2") // another way to create a task
+task "Task3" // another way
+task Task4 // another way 
+
+Task1.description = "Task 1 Description goes here"
+Task2.description = "Task 2 Description goes here"
+Task3.description = "Task 3 Description goes here"
+Task4.description = "Task 4 Description goes here"
+
+// defining an action for Task2
+Task2.doLast {println "Task2 is running now"}
+// another way to add action to a task
+// (deprecated, will be removed in Gradle 5)
+Task3 << {println "Task3 is running now"}
+
+// combining creation of a task and assigning an action to it
+task Task5 << {println "Task5 is running now"}
+// adding another action ('closure', in terms of Groovy) will chain actions for the task
+Task5 << {println "Something extra for Task5"}
+
+// 
+task Task6 {
+    description "This is Task6 Description"
+    doLast {println "Task6 is running"}
+}
