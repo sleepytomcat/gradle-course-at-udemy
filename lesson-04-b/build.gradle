@@ -1,7 +1,1 @@
 apply plugin: 'java'
-
-task hello {
-    doLast {
-	println "Hello Gradle, let's build some Java code"
-    }
-}
