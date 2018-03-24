@@ -1,0 +1,9 @@
+task SomeTask {
+    description "This is SomeTask Description"
+    doLast {println "Some last action for SomeTask"} // adding action to the end of the chain
+    doFirst {println "Something to do first"} // adding an action to the beginning of the execution chain
+    doFirst {println "Something else to do first"} // adding another action - again, beginning of the execution chain
+    doLast {println "Oh, and something else to do last"} // adding action to the end of chain
+}
+
+SomeTask.doFirst {println "Another 'first' action for SomeTask"}
