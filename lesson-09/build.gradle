@@ -1,0 +1,16 @@
+task Task1 {
+    doLast {println "Task1 is doing something useful"}
+}
+
+task Task2 {
+    doLast {println "Task2 is doing something useful"}
+}
+
+Task2.dependsOn Task1
+
+// another way to declare task dependencies
+task Task3 {
+    doLast {println "Task3 is doing something useful"}
+    dependsOn Task1
+    dependsOn Task2
+}
